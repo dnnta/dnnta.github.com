@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rails | Dnnta's blog]]></title>
+  <link href="http://dnnta.github.com/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://dnnta.github.com/"/>
+  <updated>2012-04-06T15:56:25+08:00</updated>
+  <id>http://dnnta.github.com/</id>
+  <author>
+    <name><![CDATA[admin]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ruby on Windows]]></title>
+    <link href="http://dnnta.github.com/blog/2011/09/01/ruby-on-windows/"/>
+    <updated>2011-09-01T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/09/01/ruby-on-windows</id>
+    <content type="html"><![CDATA[<div style="width:595px" id="__ss_9023966"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/changmason/ruby-on-windows-for-rubyconftw-2011" title="Ruby on Windows (RubyConf.tw 2011)" target="_blank">Ruby on Windows (RubyConf.tw 2011)</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/9023966" width="595" height="497" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> </div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[开心编程，学会CRUD之后]]></title>
+    <link href="http://dnnta.github.com/blog/2011/09/01/Next-step-after-learning-Rails-CRUD/"/>
+    <updated>2011-09-01T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/09/01/Next-step-after-learning-Rails-CRUD</id>
+    <content type="html"><![CDATA[<p><a href="http://wildjcrt.github.com/happy_programming/#1">开心编程</a></p>
+
+<p>10個從入門到稍微進階一點的點子</p>
+
+<ol>
+<li>簡單的部落格，每篇文章底下要有留言功能</li>
+<li>讓網友張貼程式碼的網站，要有產生短網址的功能</li>
+<li>一個列出待辦清單的網站（Todo list）</li>
+<li>幫第一個、第二個點子加上使用者註冊、登入驗證等功能</li>
+<li>做一個網站，可以透過這個網站以及Twilio這個網路服務發個簡訊給你自己</li>
+<li>做一個網站，可以讓使用者上傳檔案，檔案上傳之後會存到Amazon S3的雲端儲存空間</li>
+<li>第三個點子，Todo list 加上Ajax。同時也加上使用者註冊、登入驗證，以及發信提醒使用者尚有待辦事項的功能</li>
+<li>建立你自己的 JSON 及 XML API，看是要幫 Todo list 加上 API 還是其他網站</li>
+<li>利用你自己建立的 API，再將你自己的 API 包成可以直接提供給其他開發者使用的函式庫（原文案例是使用 Ruby 語言，所以是包成一個 Ruby gem）</li>
+<li>做到這個階段，你應該有辦法自己想出一個真正想做的點子了。如果還沒有，不如做個記帳軟體，要能呈現圖表 &amp; 將記帳的內容輸出成 CSV 檔案</li>
+</ol>
+
+
+<p>這每個點子背後都有其意義，包括讓你掌握最基本的程式運作原理、網頁運作方式，或是自行建立 API 來讓自己的團隊、外部團隊可以透過 API 來交流資料，甚至是你可以自己以這樣的方式開發出一個與 Mobile Apps 搭配的網路服務（如果你想做一個 Foursquare 及類似的簽到、打卡服務，或是像 Instagram 這樣的有趣拍照軟體，基本架構就是如此）。</p>
+
+<p>當然，在你什麼都還不懂的情況下，每一個點子本身都是一個龐大的挑戰，但如果你遲遲沒有開始，我相信你三年後還是一行程式都不會寫。先試著把第一個案例完成，我建議你可以使用 Ruby on Rails + MySQL 作為開始，Ruby on Rails 是一個非常優秀的網頁開發框架。</p>
+]]></content>
+  </entry>
+  
+</feed>

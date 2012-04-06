@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ipa png图片提取 - Dnnta's blog</title>
+  <meta name="author" content="admin">
+
+  
+  <meta name="description" content="Apple 对 iPhone 应用程序中的 png 图片进行了特殊的处理，在 png 文件头之后加了一个非标准的 CgBI 数据段，IDAT 段图像数据也没有传统的压缩数据头和尾，并且红色和蓝色是反的，这样就无法在 Mac 或 Windows 下不能正常使用了。 网上找滴解决办法： &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dnnta.github.com/blog/2011/07/08/pngs-of-ipa">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Dnnta's blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Dnnta's blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:dnnta.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ipa Png图片提取</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-08T00:00:00+08:00" pubdate data-updated="true">Jul 8<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Apple 对 iPhone 应用程序中的 png 图片进行了特殊的处理，在 png 文件头之后加了一个非标准的 CgBI 数据段，IDAT 段图像数据也没有传统的压缩数据头和尾，并且红色和蓝色是反的，这样就无法在 Mac 或 Windows 下不能正常使用了。</p>
+
+<p>网上找滴解决办法：</p>
+
+<ol>
+<li>先把ipa软件后缀改成zip，然后用winrar解压，然后下载iphone &ndash; fixpng.exe这个软件。把需要转换的png拷贝到主程序目录下的png目录，运行程序，点击convert，转换完成后即可在fixed文件夹找到转换后的png。</li>
+<li><a href="http://summic.com/post/53/">还原iphone app中滴png文件</a></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">admin</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-08T00:00:00+08:00" pubdate data-updated="true">Jul 8<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ios/'>iOS</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/08/10/the-problem-of-image-lazy-load-in-uiwebview/" title="Next Post: 解决在UIWebView中加载图片时出现延迟现象的做法">解决在UIWebView中加载图片时出现延迟现象的做法 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/02/CALayers/">CALayers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/01/ios-develop-tips-1/">iOS开发常识图解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/23/UITableView/">UITableView</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/03/uinavigationbar-custom/">UINavigationBar</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/01/ruby-on-windows/">ruby on Windows</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - admin -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'dnntablog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dnnta.github.com/blog/2011/07/08/pngs-of-ipa/';
+        var disqus_url = 'http://dnnta.github.com/blog/2011/07/08/pngs-of-ipa/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

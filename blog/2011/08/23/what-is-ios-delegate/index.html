@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>delegate到底是个什么东西 - Dnnta's blog</title>
+  <meta name="author" content="admin">
+
+  
+  <meta name="description" content="以下段落全摘抄于网络，便于本人意会。 任何事物，任何事情。千万别太过彻底的。。。。有时候模糊没啥不好，明白就行 delegate的概念出现与mvc，protocol，单线继承 密切相关。object-c 里没有多继承。那么又要避免做出一个对象什么都会（super class monster， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dnnta.github.com/blog/2011/08/23/what-is-ios-delegate">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Dnnta's blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Dnnta's blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:dnnta.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Delegate到底是个什么东西</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-23T00:00:00+08:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>以下段落全摘抄于网络，便于本人意会。</p>
+
+<blockquote><p>任何事物，任何事情。千万别太过彻底的。。。。<br/>有时候模糊没啥不好，明白就行</p></blockquote>
+
+
+
+
+<blockquote><p>delegate的概念出现与mvc，protocol，单线继承 密切相关。object-c 里没有多继承。那么又要避免做出一个对象什么都会（super class monster，huge ,super,waste）。一个超能对象，本身是否定了面向对象的概念和真谛了。</p></blockquote>
+
+
+
+
+<blockquote><p>The main value of delegation is that it allows you to easily customize the behavior of several objects in one central object</p><p>Helper Objects (Delegate and DataSource)<br/>Helper Objects are used throughout Cocoa and CocoaTouch, and usually take the form of a delegate or dataSource. They are commonly used to add functionality to an existing class without having to subclass it.</p></blockquote>
+
+
+
+
+<blockquote><p>Cocoa中处理事件的方式有几种，其中一种是你可以重载类中的对应的事件处理方 法，比如MouseDown事件在NSResponse类中就被方法mouseDown:处理，所以所有继承自NSResponse的类都可以重载 mouseDown:方法来实现对MouseDown事件的处理。</p><p>   另外一种处理方式就是使用Delegate，当一个对象接受到某个事件或者通知的时候， 会向它的Delegate对象查询它是否能够响应这个事件或者通知，如果可以这个对象就会给它的Delegate对象发送一个消息（执行一个方法调用）</p></blockquote>
+
+
+
+
+<blockquote><p>代理，他一定分担其它object的一部分工作!</p><p>   理由，有些动作是多个动作的复合体，例如 滑动条的，滑动过程，要处理滑动的速度，太快不行，他反应不了，还有滑动条滑动的连贯性，你不能一跳一跳的走吧，那难看死了，那就涉及到动画处理，最后滑动条滑到头了，触发什么事件，就这么一个事最起码要3个方法去完善它，在这里代理就用上了，他把一个大任务分送到3个子方法去做，那么这3个子方法就充当代理的角色，也就是xxxdelegate，这样的好处使代码的重用程度更高，而且，还易与维护，一个子方法发生变动不影响 整个大功能，否则写到一起，你改动一处，牵一发而动全身，在软件工程里很忌讳的，因为它是新衍生的语言么，设计者肯定在，这样以往的语言架构上都有的通病（模块的耦合度高和重用不是很好）上作调整。</p><p>  其次，有过c++/c开发经验的人 马上会想到callback我感觉他们是有点像，但是callback多数都是系统掉回去用了，例如，在c++中ontimer这个时钟，它每多少秒干什么事，就需要一个action 函数实现它，那么这个函数就是系统来调用，不是给我们用户创建的object调用的，而delegate分发出去谁用了说不准，我感觉设计者在设计这个delegate的时候，强调的是分发，而不是强调的是谁来用。</p></blockquote>
+
+
+
+
+<blockquote><p>打个比方，本来每个人的桌子都要自己清理，可能桌子意乱，自己就要清理一下。但是有一天来了一个阿姨(delegate)，大家把清理桌子的活都委托给他了。阿姨是个实现了清理技能的delegate。原因很多种，自己太懒、太忙、或者残了。。。</p><p>   注意的是，delegate一般会保留一个委托者的引用。因为阿姨不能按一个套路清理所有人的桌子，经常还得找委托者问，这个东西能不能扔。这个很重要!</p></blockquote>
+
+
+
+
+<blockquote><p>举个例子,我和gagaga都买股票,都想找个证卷商帮忙.<br/>我可以找我自己的,他也可以找他的,写程序的人发现我们的需求差不多,就给我们介绍了同一个奸商,lv同学.<br/>我们两给他的任务都很简单,就是当股票低于10元的时候就全部抛掉,那么lv就是我们的delegate,他就会帮我们<br/>盯着价格,我们就不用操心了.</p></blockquote>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">admin</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-23T00:00:00+08:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ios/'>iOS</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/12/iOS-random/" title="Previous Post: iOS随机数">&laquo; iOS随机数</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/09/01/Next-step-after-learning-Rails-CRUD/" title="Next Post: 开心编程，学会CRUD之后">开心编程，学会CRUD之后 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/02/CALayers/">CALayers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/01/ios-develop-tips-1/">iOS开发常识图解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/23/UITableView/">UITableView</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/03/uinavigationbar-custom/">UINavigationBar</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/01/ruby-on-windows/">ruby on Windows</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - admin -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'dnntablog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dnnta.github.com/blog/2011/08/23/what-is-ios-delegate/';
+        var disqus_url = 'http://dnnta.github.com/blog/2011/08/23/what-is-ios-delegate/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

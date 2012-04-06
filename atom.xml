@@ -1,116 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Dnnta's blog</title>
-  <meta name="author" content="admin">
-
-  
-  <meta name="description" content="Setting CALayer&nbsp;Corner Radius and Image Content 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-CALayer *sublayer = [CALayer layer];
-sublayer. &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://dnnta.github.com">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Dnnta's blog" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Dnnta's blog</a></h1>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:dnnta.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Dnnta's blog]]></title>
+  <link href="http://dnnta.github.com/atom.xml" rel="self"/>
+  <link href="http://dnnta.github.com/"/>
+  <updated>2012-04-06T15:56:25+08:00</updated>
+  <id>http://dnnta.github.com/</id>
+  <author>
+    <name><![CDATA[admin]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/02/CALayers/">CALayers</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2012-03-02T00:00:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Setting CALayer&nbsp;Corner Radius and Image Content</h2>
+  <entry>
+    <title type="html"><![CDATA[CALayers]]></title>
+    <link href="http://dnnta.github.com/blog/2012/03/02/CALayers/"/>
+    <updated>2012-03-02T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2012/03/02/CALayers</id>
+    <content type="html"><![CDATA[<h2>Setting CALayer&nbsp;Corner Radius and Image Content</h2>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -153,89 +61,178 @@ sublayer. &hellip;">
 
 
 
-</div>
+<!--more-->
+
+
+<p><img src="http://dnnta.github.com/images/CALayer-with-Image-Content-and-Corner-Radius.jpg" width="300" height="300" title="&#34;simpler layer&#34;" alt="&#34;simpler layer&#34;"> &nbsp;&nbsp;&nbsp;
+<img src="http://dnnta.github.com/images/CALayer-Custom-Drawn-200x300.jpg" title="&#34;Custom Drawn Content&#34;" alt="&#34;Custom Drawn Content&#34;"></p>
+
+<h2>Custom Drawn Content</h2>
+
+<p>Add the following code at the bottom of your viewDidLoad to add a new layer that will be custom drawn:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="c1">// 大部分和之前一样设置shadow/cornerRadius/border/masksToBounds</span>
+</span><span class='line'><span class="n">CALayer</span> <span class="o">*</span><span class="n">customDrawn</span> <span class="o">=</span> <span class="p">[</span><span class="n">CALayer</span> <span class="n">layer</span><span class="p">];</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">greenColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">shadowOffset</span> <span class="o">=</span> <span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">shadowRadius</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">shadowColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">shadowOpacity</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">masksToBounds</span> <span class="o">=</span> <span class="n">YES</span><span class="p">;</span>
+</span><span class='line'><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">layer</span> <span class="nl">addSublayer:</span><span class="n">customDrawn</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">customDrawn</span> <span class="n">setNeedsDisplay</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>需要注意以下两点：</em><br/>
+1. 设置<code>delegate</code>并实现<code>drawLayer:inContext</code> <br/>
+2. <code>addSublayer</code>后需要调用<code>setNeedsDisplay</code>实现重绘</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">void</span> <span class="nf">MyDrawColoredPattern</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">info</span><span class="p">,</span> <span class="n">CGContextRef</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">CGColorRef</span> <span class="n">dotColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nl">colorWithHue:</span><span class="mi">0</span> <span class="nl">saturation:</span><span class="mi">0</span> <span class="nl">brightness:</span><span class="mf">0.07</span> <span class="nl">alpha:</span><span class="mf">1.0</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">CGColorRef</span> <span class="n">shadowColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nl">colorWithRed:</span><span class="mi">1</span> <span class="nl">green:</span><span class="mi">1</span> <span class="nl">blue:</span><span class="mi">1</span> <span class="nl">alpha:</span><span class="mf">0.1</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">CGContextSetFillColorWithColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">dotColor</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGContextSetShadowWithColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">shadowColor</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">CGContextAddArc</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">radians</span><span class="p">(</span><span class="mi">360</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGContextFillPath</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">CGContextAddArc</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">radians</span><span class="p">(</span><span class="mi">360</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGContextFillPath</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">drawLayer:</span><span class="p">(</span><span class="n">CALayer</span> <span class="o">*</span><span class="p">)</span><span class="n">layer</span> <span class="nl">inContext:</span><span class="p">(</span><span class="n">CGContextRef</span><span class="p">)</span><span class="n">context</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">CGColorRef</span> <span class="n">bgColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nl">colorWithHue:</span><span class="mf">0.6</span> <span class="nl">saturation:</span><span class="mf">1.0</span> <span class="nl">brightness:</span><span class="mf">1.0</span> <span class="nl">alpha:</span><span class="mf">1.0</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">CGContextSetFillColorWithColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">bgColor</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGContextFillRect</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">layer</span><span class="p">.</span><span class="n">bounds</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">static</span> <span class="k">const</span> <span class="n">CGPatternCallbacks</span> <span class="n">callbacks</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">MyDrawColoredPattern</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">CGContextSaveGState</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGColorSpaceRef</span> <span class="n">patternSpace</span> <span class="o">=</span> <span class="n">CGColorSpaceCreatePattern</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGContextSetFillColorSpace</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">patternSpace</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGColorSpaceRelease</span><span class="p">(</span><span class="n">patternSpace</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">CGPatternRef</span> <span class="n">pattern</span> <span class="o">=</span> <span class="n">CGPatternCreate</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span>
+</span><span class='line'>                                           <span class="n">layer</span><span class="p">.</span><span class="n">bounds</span><span class="p">,</span>
+</span><span class='line'>                                           <span class="n">CGAffineTransformIdentity</span><span class="p">,</span>
+</span><span class='line'>                                           <span class="mi">24</span><span class="p">,</span>
+</span><span class='line'>                                           <span class="mi">24</span><span class="p">,</span>
+</span><span class='line'>                                           <span class="n">kCGPatternTilingConstantSpacing</span><span class="p">,</span>
+</span><span class='line'>                                           <span class="n">true</span><span class="p">,</span>
+</span><span class='line'>                                           <span class="o">&amp;</span><span class="n">callbacks</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGFloat</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">CGContextSetFillPattern</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGPatternRelease</span><span class="p">(</span><span class="n">pattern</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGContextFillRect</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">layer</span><span class="p">.</span><span class="n">bounds</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">CGContextRestoreGState</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[iOS开发常识图解]]></title>
+    <link href="http://dnnta.github.com/blog/2011/12/01/ios-develop-tips-1/"/>
+    <updated>2011-12-01T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/12/01/ios-develop-tips-1</id>
+    <content type="html"><![CDATA[<h2>开源协议图解</h2>
+
+<p><img src="http://dnnta.github.com/images/free_software_licenses.png" title="free_software_licenses" ></p>
+
+<!--more-->
+
+
+<h2>frame和bounds</h2>
+
+<p>frame和bounds是UIView中的两个属性(property)。
+frame指的是：该view在父view坐标系统中的位置和大小。（参照点是父亲的坐标系统)<br/>
+bounds指的是：该view在本身坐标系统中的位置和大小。（参照点是本身坐标系统)</p>
+
+<p><img src="http://dnnta.github.com/images/frame_bounds.png" title="frame_bounds" ></p>
+
+<h2>常用控件大小</h2>
+
+<p><img src="http://dnnta.github.com/images/sizes.png" title="size of iPhone UI Elements" ></p>
+]]></content>
+  </entry>
   
-    <footer>
-      <a rel="full-article" href="/blog/2012/03/02/CALayers/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/01/ios-develop-tips-1/">iOS开发常识图解</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-01T00:00:00+08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>开源协议图解</h2>
-
-<p><img src="/images/free_software_licenses.png" title="free_software_licenses" ></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/12/01/ios-develop-tips-1/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/23/UITableView/">UITableView</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-23T00:00:00+08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>UITableViewCell局部刷新</p>
+  <entry>
+    <title type="html"><![CDATA[UITableView]]></title>
+    <link href="http://dnnta.github.com/blog/2011/11/23/UITableView/"/>
+    <updated>2011-11-23T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/11/23/UITableView</id>
+    <content type="html"><![CDATA[<p>UITableViewCell局部刷新</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">tableView</span> <span class="nl">reloadRowsAtIndexPaths:</span><span class="p">[</span><span class="n">NSArray</span> <span class="nl">arrayWithObjects:</span><span class="n">indexPathOfYourCell</span><span class="p">,</span> <span class="nb">nil</span><span class="p">]</span> <span class="nl">withRowAnimation:</span><span class="n">UITableViewRowAnimationNone</span><span class="p">];</span>
@@ -250,42 +247,15 @@ sublayer. &hellip;">
 </pre></td><td class='code'><pre><code class='objc'><span class='line'> <span class="n">CGSize</span> <span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="n">text</span> <span class="nl">sizeWithFont:</span><span class="n">font</span> <span class="nl">constrainedToSize:</span><span class="n">CGSizeMake</span><span class="p">(</span><span class="mf">175.0f</span><span class="p">,</span> <span class="mf">2000.0f</span><span class="p">)</span> <span class="nl">lineBreakMode:</span><span class="n">UILineBreakModeWordWrap</span><span class="p">];</span>
 </span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/03/uinavigationbar-custom/">UINavigationBar</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-03T00:00:00+08:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>custom UITabbarItem</h3>
+  <entry>
+    <title type="html"><![CDATA[UINavigationBar]]></title>
+    <link href="http://dnnta.github.com/blog/2011/11/03/uinavigationbar-custom/"/>
+    <updated>2011-11-03T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/11/03/uinavigationbar-custom</id>
+    <content type="html"><![CDATA[<h3>custom UITabbarItem</h3>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -360,79 +330,25 @@ sublayer. &hellip;">
 
 
 
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[ruby on Windows]]></title>
+    <link href="http://dnnta.github.com/blog/2011/09/01/ruby-on-windows/"/>
+    <updated>2011-09-01T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/09/01/ruby-on-windows</id>
+    <content type="html"><![CDATA[<div style="width:595px" id="__ss_9023966"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/changmason/ruby-on-windows-for-rubyconftw-2011" title="Ruby on Windows (RubyConf.tw 2011)" target="_blank">Ruby on Windows (RubyConf.tw 2011)</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/9023966" width="595" height="497" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> </div>
+
+]]></content>
+  </entry>
   
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/01/ruby-on-windows/">Ruby on Windows</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-01T00:00:00+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div style="width:595px" id="__ss_9023966"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/changmason/ruby-on-windows-for-rubyconftw-2011" title="Ruby on Windows (RubyConf.tw 2011)" target="_blank">Ruby on Windows (RubyConf.tw 2011)</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/9023966" width="595" height="497" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> </div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/01/Next-step-after-learning-Rails-CRUD/">开心编程，学会CRUD之后</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-01T00:00:00+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://wildjcrt.github.com/happy_programming/#1">开心编程</a></p>
+  <entry>
+    <title type="html"><![CDATA[开心编程，学会CRUD之后]]></title>
+    <link href="http://dnnta.github.com/blog/2011/09/01/Next-step-after-learning-Rails-CRUD/"/>
+    <updated>2011-09-01T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/09/01/Next-step-after-learning-Rails-CRUD</id>
+    <content type="html"><![CDATA[<p><a href="http://wildjcrt.github.com/happy_programming/#1">开心编程</a></p>
 
 <p>10個從入門到稍微進階一點的點子</p>
 
@@ -453,42 +369,15 @@ sublayer. &hellip;">
 <p>這每個點子背後都有其意義，包括讓你掌握最基本的程式運作原理、網頁運作方式，或是自行建立 API 來讓自己的團隊、外部團隊可以透過 API 來交流資料，甚至是你可以自己以這樣的方式開發出一個與 Mobile Apps 搭配的網路服務（如果你想做一個 Foursquare 及類似的簽到、打卡服務，或是像 Instagram 這樣的有趣拍照軟體，基本架構就是如此）。</p>
 
 <p>當然，在你什麼都還不懂的情況下，每一個點子本身都是一個龐大的挑戰，但如果你遲遲沒有開始，我相信你三年後還是一行程式都不會寫。先試著把第一個案例完成，我建議你可以使用 Ruby on Rails + MySQL 作為開始，Ruby on Rails 是一個非常優秀的網頁開發框架。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/08/23/what-is-ios-delegate/">Delegate到底是个什么东西</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-23T00:00:00+08:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>以下段落全摘抄于网络，便于本人意会。</p>
+  <entry>
+    <title type="html"><![CDATA[delegate到底是个什么东西]]></title>
+    <link href="http://dnnta.github.com/blog/2011/08/23/what-is-ios-delegate/"/>
+    <updated>2011-08-23T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/08/23/what-is-ios-delegate</id>
+    <content type="html"><![CDATA[<p>以下段落全摘抄于网络，便于本人意会。</p>
 
 <blockquote><p>任何事物，任何事情。千万别太过彻底的。。。。<br/>有时候模糊没啥不好，明白就行</p></blockquote>
 
@@ -524,42 +413,15 @@ sublayer. &hellip;">
 
 
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/08/12/iOS-random/">iOS随机数</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-12T00:00:00+08:00" pubdate data-updated="true">Aug 12<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在iPhone中有几个内嵌的随机数发生器，很多人的第一反应可能就是在调用如下函数后使用<code>rand*()</code>：</p>
+  <entry>
+    <title type="html"><![CDATA[iOS随机数]]></title>
+    <link href="http://dnnta.github.com/blog/2011/08/12/iOS-random/"/>
+    <updated>2011-08-12T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/08/12/iOS-random</id>
+    <content type="html"><![CDATA[<p>在iPhone中有几个内嵌的随机数发生器，很多人的第一反应可能就是在调用如下函数后使用<code>rand*()</code>：</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">srandom</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
@@ -601,42 +463,15 @@ sublayer. &hellip;">
 
 
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/08/10/the-problem-of-image-lazy-load-in-uiwebview/">解决在UIWebView中加载图片时出现延迟现象的做法</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-10T00:00:00+08:00" pubdate data-updated="true">Aug 10<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>转一篇文章，估计以后用得着</p>
+  <entry>
+    <title type="html"><![CDATA[解决在UIWebView中加载图片时出现延迟现象的做法]]></title>
+    <link href="http://dnnta.github.com/blog/2011/08/10/the-problem-of-image-lazy-load-in-uiwebview/"/>
+    <updated>2011-08-10T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/08/10/the-problem-of-image-lazy-load-in-uiwebview</id>
+    <content type="html"><![CDATA[<p>转一篇文章，估计以后用得着</p>
 
 <p>最近在用UIWebView控件来显示从某个网站上的图片跟文字，做得还算是顺利，不过有个小问题就是，页面已经通信完毕，并且文字已经显示出来 了，但是要表示的图片却要过个3秒左右才出来，实在是恼火。本来以为是图片的url没解析出来，用NSLog来打印出来的时候没发现有什么错的，真是奇 怪。
 先来上段代码先（代码中的图片地址是假的，请各位试的时候自己替换一下</p>
@@ -672,42 +507,15 @@ sublayer. &hellip;">
 
 <p>粗体的地方就是通过base64来实现的地方，我们这里显示的是jpg格式的图片，因此在img标签的src属性里面写的是<code>src=’data:image/jpg;base64,%@</code>，而如果是其他格式的图片的话记得把对应的地方给改一下。（不过我实验的结果是，即使你用image/png来表示jpg的图片的话一样能表示的说，至于有不良情况的话我也就不知道了）
 通过这样处理，解决了在UIWebView中能同时显示图片跟文字，而不会出现图片加载延时的情况了，活活。（别看写出来就那么一段代码，这可是花费了我很长的时间才给解决掉的问题的，ft）</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/08/pngs-of-ipa/">Ipa Png图片提取</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-08T00:00:00+08:00" pubdate data-updated="true">Jul 8<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Apple 对 iPhone 应用程序中的 png 图片进行了特殊的处理，在 png 文件头之后加了一个非标准的 CgBI 数据段，IDAT 段图像数据也没有传统的压缩数据头和尾，并且红色和蓝色是反的，这样就无法在 Mac 或 Windows 下不能正常使用了。</p>
+  <entry>
+    <title type="html"><![CDATA[ipa png图片提取]]></title>
+    <link href="http://dnnta.github.com/blog/2011/07/08/pngs-of-ipa/"/>
+    <updated>2011-07-08T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/07/08/pngs-of-ipa</id>
+    <content type="html"><![CDATA[<p>Apple 对 iPhone 应用程序中的 png 图片进行了特殊的处理，在 png 文件头之后加了一个非标准的 CgBI 数据段，IDAT 段图像数据也没有传统的压缩数据头和尾，并且红色和蓝色是反的，这样就无法在 Mac 或 Windows 下不能正常使用了。</p>
 
 <p>网上找滴解决办法：</p>
 
@@ -716,94 +524,7 @@ sublayer. &hellip;">
 <li><a href="http://summic.com/post/53/">还原iphone app中滴png文件</a></li>
 </ol>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2012/03/02/CALayers/">CALayers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/12/01/ios-develop-tips-1/">iOS开发常识图解</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/23/UITableView/">UITableView</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/03/uinavigationbar-custom/">UINavigationBar</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/09/01/ruby-on-windows/">ruby on Windows</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - admin -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'dnntablog';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>开心编程，学会CRUD之后 - Dnnta's blog</title>
+  <meta name="author" content="admin">
+
+  
+  <meta name="description" content="开心编程 10個從入門到稍微進階一點的點子 簡單的部落格，每篇文章底下要有留言功能
+讓網友張貼程式碼的網站，要有產生短網址的功能
+一個列出待辦清單的網站（Todo list）
+幫第一個、第二個點子加上使用者註冊、登入驗證等功能
+做一個網站， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dnnta.github.com/blog/2011/09/01/Next-step-after-learning-Rails-CRUD">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Dnnta's blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Dnnta's blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:dnnta.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">开心编程，学会CRUD之后</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-01T00:00:00+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://wildjcrt.github.com/happy_programming/#1">开心编程</a></p>
+
+<p>10個從入門到稍微進階一點的點子</p>
+
+<ol>
+<li>簡單的部落格，每篇文章底下要有留言功能</li>
+<li>讓網友張貼程式碼的網站，要有產生短網址的功能</li>
+<li>一個列出待辦清單的網站（Todo list）</li>
+<li>幫第一個、第二個點子加上使用者註冊、登入驗證等功能</li>
+<li>做一個網站，可以透過這個網站以及Twilio這個網路服務發個簡訊給你自己</li>
+<li>做一個網站，可以讓使用者上傳檔案，檔案上傳之後會存到Amazon S3的雲端儲存空間</li>
+<li>第三個點子，Todo list 加上Ajax。同時也加上使用者註冊、登入驗證，以及發信提醒使用者尚有待辦事項的功能</li>
+<li>建立你自己的 JSON 及 XML API，看是要幫 Todo list 加上 API 還是其他網站</li>
+<li>利用你自己建立的 API，再將你自己的 API 包成可以直接提供給其他開發者使用的函式庫（原文案例是使用 Ruby 語言，所以是包成一個 Ruby gem）</li>
+<li>做到這個階段，你應該有辦法自己想出一個真正想做的點子了。如果還沒有，不如做個記帳軟體，要能呈現圖表 &amp; 將記帳的內容輸出成 CSV 檔案</li>
+</ol>
+
+
+<p>這每個點子背後都有其意義，包括讓你掌握最基本的程式運作原理、網頁運作方式，或是自行建立 API 來讓自己的團隊、外部團隊可以透過 API 來交流資料，甚至是你可以自己以這樣的方式開發出一個與 Mobile Apps 搭配的網路服務（如果你想做一個 Foursquare 及類似的簽到、打卡服務，或是像 Instagram 這樣的有趣拍照軟體，基本架構就是如此）。</p>
+
+<p>當然，在你什麼都還不懂的情況下，每一個點子本身都是一個龐大的挑戰，但如果你遲遲沒有開始，我相信你三年後還是一行程式都不會寫。先試著把第一個案例完成，我建議你可以使用 Ruby on Rails + MySQL 作為開始，Ruby on Rails 是一個非常優秀的網頁開發框架。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">admin</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-01T00:00:00+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>Rails</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/23/what-is-ios-delegate/" title="Previous Post: delegate到底是个什么东西">&laquo; delegate到底是个什么东西</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/09/01/ruby-on-windows/" title="Next Post: ruby on Windows">ruby on Windows &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/02/CALayers/">CALayers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/01/ios-develop-tips-1/">iOS开发常识图解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/23/UITableView/">UITableView</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/03/uinavigationbar-custom/">UINavigationBar</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/01/ruby-on-windows/">ruby on Windows</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - admin -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'dnntablog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dnnta.github.com/blog/2011/09/01/Next-step-after-learning-Rails-CRUD/';
+        var disqus_url = 'http://dnnta.github.com/blog/2011/09/01/Next-step-after-learning-Rails-CRUD/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

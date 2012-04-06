@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: iOS | Dnnta's blog]]></title>
+  <link href="http://dnnta.github.com/blog/categories/ios/atom.xml" rel="self"/>
+  <link href="http://dnnta.github.com/"/>
+  <updated>2012-04-06T15:56:25+08:00</updated>
+  <id>http://dnnta.github.com/</id>
+  <author>
+    <name><![CDATA[admin]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CALayers]]></title>
+    <link href="http://dnnta.github.com/blog/2012/03/02/CALayers/"/>
+    <updated>2012-03-02T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2012/03/02/CALayers</id>
+    <content type="html"><![CDATA[<h2>Setting CALayer&nbsp;Corner Radius and Image Content</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">CALayer</span> <span class="o">*</span><span class="n">sublayer</span> <span class="o">=</span> <span class="p">[</span><span class="n">CALayer</span> <span class="n">layer</span><span class="p">];</span>
+</span><span class='line'><span class="n">sublayer</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blueColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">sublayer</span><span class="p">.</span><span class="n">shadowOffset</span> <span class="o">=</span> <span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span><span class='line'><span class="n">sublayer</span><span class="p">.</span><span class="n">shadowRadius</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">sublayer</span><span class="p">.</span><span class="n">shadowColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">sublayer</span><span class="p">.</span><span class="n">shadowOpacity</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">;</span>
+</span><span class='line'><span class="n">sublayer</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">192</span><span class="p">);</span>
+</span><span class='line'><span class="n">sublayer</span><span class="p">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">sublayer</span><span class="p">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">sublayer</span><span class="p">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">;</span>
+</span><span class='line'><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">layer</span> <span class="nl">addSublayer:</span><span class="n">sublayer</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">CALayer</span> <span class="o">*</span><span class="n">imageLayer</span> <span class="o">=</span> <span class="p">[</span><span class="n">CALayer</span> <span class="n">layer</span><span class="p">];</span>
+</span><span class='line'><span class="n">imageLayer</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">sublayer</span><span class="p">.</span><span class="n">bounds</span><span class="p">;</span>
+</span><span class='line'><span class="n">imageLayer</span><span class="p">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">imageLayer</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="p">[</span><span class="n">UIImage</span> <span class="nl">imageNamed:</span><span class="s">@&quot;BattleMapSplashScreen.jpg&quot;</span><span class="p">].</span><span class="n">CGImage</span><span class="p">;</span>
+</span><span class='line'><span class="n">imageLayer</span><span class="p">.</span><span class="n">masksToBounds</span> <span class="o">=</span> <span class="n">YES</span><span class="p">;</span>
+</span><span class='line'><span class="p">[</span><span class="n">sublayer</span> <span class="nl">addSublayer:</span><span class="n">imageLayer</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<!--more-->
+
+
+<p><img src="/images/CALayer-with-Image-Content-and-Corner-Radius.jpg" width="300" height="300" title="&#34;simpler layer&#34;" alt="&#34;simpler layer&#34;"> &nbsp;&nbsp;&nbsp;
+<img src="/images/CALayer-Custom-Drawn-200x300.jpg" title="&#34;Custom Drawn Content&#34;" alt="&#34;Custom Drawn Content&#34;"></p>
+
+<h2>Custom Drawn Content</h2>
+
+<p>Add the following code at the bottom of your viewDidLoad to add a new layer that will be custom drawn:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="c1">// 大部分和之前一样设置shadow/cornerRadius/border/masksToBounds</span>
+</span><span class='line'><span class="n">CALayer</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">customDrawn</span> <span class="o">=</span> <span class="p">[</span><span class="n">CALayer</span> <span class="n">layer</span><span class="p">];</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">greenColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">shadowOffset</span> <span class="o">=</span> <span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">shadowRadius</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">shadowColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">shadowOpacity</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">customDrawn</span><span class="p">.</span><span class="n">masksToBounds</span> <span class="o">=</span> <span class="n">YES</span><span class="p">;</span>
+</span><span class='line'><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">layer</span> <span class="nl">addSublayer:</span><span class="n">customDrawn</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">customDrawn</span> <span class="n">setNeedsDisplay</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</em>需要注意以下两点：<em><br/>
+1. 设置<code>delegate</code>并实现<code>drawLayer:inContext</code> <br/>
+2. <code>addSublayer</code>后需要调用<code>setNeedsDisplay</code>实现重绘<br/>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">void</span> <span class="nf">MyDrawColoredPattern</span> <span class="p">(</span><span class="kt">void</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">info</span><span class="p">,</span> <span class="n">CGContextRef</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">CGColorRef</span> <span class="n">dotColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nl">colorWithHue:</span><span class="mi">0</span> <span class="nl">saturation:</span><span class="mi">0</span> <span class="nl">brightness:</span><span class="mf">0.07</span> <span class="nl">alpha:</span><span class="mf">1.0</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'><span class="n">CGColorRef</span> <span class="n">shadowColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nl">colorWithRed:</span><span class="mi">1</span> <span class="nl">green:</span><span class="mi">1</span> <span class="nl">blue:</span><span class="mi">1</span> <span class="nl">alpha:</span><span class="mf">0.1</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">CGContextSetFillColorWithColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">dotColor</span><span class="p">);</span>
+</span><span class='line'><span class="n">CGContextSetShadowWithColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">shadowColor</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">CGContextAddArc</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">radians</span><span class="p">(</span><span class="mi">360</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</span><span class='line'><span class="n">CGContextFillPath</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">CGContextAddArc</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">radians</span><span class="p">(</span><span class="mi">360</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</span><span class='line'><span class="n">CGContextFillPath</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">drawLayer:</span><span class="p">(</span><span class="n">CALayer</span> <span class="o">*</span><span class="p">)</span><span class="n">layer</span> <span class="nl">inContext:</span><span class="p">(</span><span class="n">CGContextRef</span><span class="p">)</span><span class="n">context</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">CGColorRef</span> <span class="n">bgColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nl">colorWithHue:</span><span class="mf">0.6</span> <span class="nl">saturation:</span><span class="mf">1.0</span> <span class="nl">brightness:</span><span class="mf">1.0</span> <span class="nl">alpha:</span><span class="mf">1.0</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">CGContextSetFillColorWithColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">bgColor</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">CGContextFillRect</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">layer</span><span class="p">.</span><span class="n">bounds</span><span class="p">);</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="k">static</span> <span class="k">const</span> <span class="n">CGPatternCallbacks</span> <span class="n">callbacks</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">MyDrawColoredPattern</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">CGContextSaveGState</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">CGColorSpaceRef</span> <span class="n">patternSpace</span> <span class="o">=</span> <span class="n">CGColorSpaceCreatePattern</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">CGContextSetFillColorSpace</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">patternSpace</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">CGColorSpaceRelease</span><span class="p">(</span><span class="n">patternSpace</span><span class="p">);</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">CGPatternRef</span> <span class="n">pattern</span> <span class="o">=</span> <span class="n">CGPatternCreate</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>                                     <span class="n">layer</span><span class="p">.</span><span class="n">bounds</span><span class="p">,</span>
+</span><span class='line'>                                     <span class="n">CGAffineTransformIdentity</span><span class="p">,</span>
+</span><span class='line'>                                     <span class="mi">24</span><span class="p">,</span>
+</span><span class='line'>                                     <span class="mi">24</span><span class="p">,</span>
+</span><span class='line'>                                     <span class="n">kCGPatternTilingConstantSpacing</span><span class="p">,</span>
+</span><span class='line'>                                     <span class="n">true</span><span class="p">,</span>
+</span><span class='line'>                                     <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">callbacks</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">CGFloat</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">CGContextSetFillPattern</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">alpha</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">CGPatternRelease</span><span class="p">(</span><span class="n">pattern</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">CGContextFillRect</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">layer</span><span class="p">.</span><span class="n">bounds</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">CGContextRestoreGState</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS开发常识图解]]></title>
+    <link href="http://dnnta.github.com/blog/2011/12/01/ios-develop-tips-1/"/>
+    <updated>2011-12-01T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/12/01/ios-develop-tips-1</id>
+    <content type="html"><![CDATA[<h2>开源协议图解</h2>
+
+<p><img src="/images/free_software_licenses.png" title="free_software_licenses" ></p>
+
+<!--more-->
+
+
+<h2>frame和bounds</h2>
+
+<p>frame和bounds是UIView中的两个属性(property)。
+frame指的是：该view在父view坐标系统中的位置和大小。（参照点是父亲的坐标系统)<br/>
+bounds指的是：该view在本身坐标系统中的位置和大小。（参照点是本身坐标系统)</p>
+
+<p><img src="/images/frame_bounds.png" title="frame_bounds" ></p>
+
+<h2>常用控件大小</h2>
+
+<p><img src="/images/sizes.png" title="size of iPhone UI Elements" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[UITableView]]></title>
+    <link href="http://dnnta.github.com/blog/2011/11/23/UITableView/"/>
+    <updated>2011-11-23T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/11/23/UITableView</id>
+    <content type="html"><![CDATA[<p>UITableViewCell局部刷新
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">tableView</span> <span class="nl">reloadRowsAtIndexPaths:</span><span class="p">[</span><span class="n">NSArray</span> <span class="nl">arrayWithObjects:</span><span class="n">indexPathOfYourCell</span><span class="p">,</span> <span class="nb">nil</span><span class="p">]</span> <span class="nl">withRowAnimation:</span><span class="n">UITableViewRowAnimationNone</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>下拉刷新 关键字<code>pull refresh</code></p>
+
+<p>字体占用空间<code>Helvetica</code>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">CGSize</span> <span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="n">text</span> <span class="nl">sizeWithFont:</span><span class="n">font</span> <span class="nl">constrainedToSize:</span><span class="n">CGSizeMake</span><span class="p">(</span><span class="mf">175.0f</span><span class="p">,</span> <span class="mf">2000.0f</span><span class="p">)</span> <span class="nl">lineBreakMode:</span><span class="n">UILineBreakModeWordWrap</span><span class="p">];</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[UINavigationBar]]></title>
+    <link href="http://dnnta.github.com/blog/2011/11/03/uinavigationbar-custom/"/>
+    <updated>2011-11-03T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/11/03/uinavigationbar-custom</id>
+    <content type="html"><![CDATA[<h3>custom UITabbarItem</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">UIFont</span> <span class="o">*</span><span class="n">font</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIFont</span> <span class="nl">fontWithName:</span><span class="s">@&quot;Helvetica&quot;</span> <span class="nl">size:</span><span class="mf">13.0f</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">UIButton</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">backBtn</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIButton</span> <span class="nl">buttonWithType:</span><span class="n">UIButtonTypeCustom</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">backBtn</span> <span class="nl">setBackgroundImage:</span><span class="p">[</span><span class="n">UIImage</span> <span class="nl">imageNamed:</span><span class="s">@&quot;btn_left.png&quot;</span><span class="p">]</span> <span class="nl">forState:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">backBtn</span> <span class="nl">addTarget:</span><span class="n">self</span> <span class="nl">action:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">back:</span><span class="p">)</span> <span class="nl">forControlEvents:</span><span class="n">UIControlEventTouchUpInside</span><span class="p">];</span>
+</span><span class='line'><span class="n">backBtn</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">38</span><span class="p">);</span>
+</span><span class='line'><span class="p">[</span><span class="n">backBtn</span> <span class="nl">setTitle:</span><span class="s">@&quot;  返回&quot;</span> <span class="nl">forState:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+</span><span class='line'><span class="n">backBtn</span><span class="p">.</span><span class="n">titleLabel</span><span class="p">.</span><span class="n">font</span> <span class="o">=</span> <span class="n">font</span><span class="p">;</span>
+</span><span class='line'><span class="p">[</span><span class="n">backBtn</span> <span class="nl">setTitleShadowColor:</span><span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">]</span> <span class="nl">forState:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+</span><span class='line'><span class="n">backBtn</span><span class="p">.</span><span class="n">titleLabel</span><span class="p">.</span><span class="n">shadowOffset</span> <span class="o">=</span> <span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'><span class="n">UIBarButtonItem</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">backItem</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIBarButtonItem</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCustomView:</span><span class="n">backBtn</span><span class="p">];</span>
+</span><span class='line'><span class="n">self</span><span class="p">.</span><span class="n">navigationItem</span><span class="p">.</span><span class="n">leftBarButtonItem</span> <span class="o">=</span> <span class="n">backItem</span><span class="p">;</span>
+</span><span class='line'><span class="p">[</span><span class="n">backItem</span> <span class="n">release</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">UIButton</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">rightBtn</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIButton</span> <span class="nl">buttonWithType:</span><span class="n">UIButtonTypeCustom</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">rightBtn</span> <span class="nl">setBackgroundImage:</span><span class="p">[</span><span class="n">UIImage</span> <span class="nl">imageNamed:</span><span class="s">@&quot;btn_right.png&quot;</span><span class="p">]</span> <span class="nl">forState:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">rightBtn</span> <span class="nl">addTarget:</span><span class="n">self</span> <span class="nl">action:</span><span class="nb">nil</span> <span class="nl">forControlEvents:</span><span class="n">UIControlEventTouchUpInside</span><span class="p">];</span>
+</span><span class='line'><span class="n">rightBtn</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">39</span><span class="p">);</span>
+</span><span class='line'><span class="p">[</span><span class="n">rightBtn</span> <span class="nl">setTitle:</span><span class="s">@&quot;纠错&quot;</span> <span class="nl">forState:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">rightBtn</span> <span class="nl">setTitleShadowColor:</span><span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">]</span> <span class="nl">forState:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+</span><span class='line'><span class="n">rightBtn</span><span class="p">.</span><span class="n">titleLabel</span><span class="p">.</span><span class="n">shadowOffset</span> <span class="o">=</span> <span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'><span class="n">rightBtn</span><span class="p">.</span><span class="n">titleLabel</span><span class="p">.</span><span class="n">font</span> <span class="o">=</span> <span class="n">font</span><span class="p">;</span>
+</span><span class='line'><span class="n">UIBarButtonItem</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">rightItem</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIBarButtonItem</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCustomView:</span><span class="n">rightBtn</span><span class="p">];</span>
+</span><span class='line'><span class="n">self</span><span class="p">.</span><span class="n">navigationItem</span><span class="p">.</span><span class="n">rightBarButtonItem</span> <span class="o">=</span> <span class="n">rightItem</span><span class="p">;</span>
+</span><span class='line'><span class="p">[</span><span class="n">rightItem</span> <span class="n">release</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">back:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">navigationController</span> <span class="nl">popViewControllerAnimated:</span><span class="n">YES</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></li>
+</ul>
+
+
+<h3>设置UIBarButtonItem里面图片的偏移</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="c1">//moves the image 4 pixels down.</span>
+</span><span class='line'><span class="kt">float</span> <span class="n">topInset</span> <span class="o">=</span> <span class="mf">4.0f</span><span class="p">;</span>
+</span><span class='line'><span class="n">myUIBarButton</span><span class="p">.</span><span class="n">imageInsets</span> <span class="o">=</span> <span class="n">UIEdgeInsetsMake</span><span class="p">(</span><span class="n">topInset</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="o">-</span><span class="n">topInset</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[delegate到底是个什么东西]]></title>
+    <link href="http://dnnta.github.com/blog/2011/08/23/what-is-ios-delegate/"/>
+    <updated>2011-08-23T00:00:00+08:00</updated>
+    <id>http://dnnta.github.com/blog/2011/08/23/what-is-ios-delegate</id>
+    <content type="html"><![CDATA[<p>以下段落全摘抄于网络，便于本人意会。</p>
+
+<p><blockquote><p>任何事物，任何事情。千万别太过彻底的。。。。<br/>有时候模糊没啥不好，明白就行</p></blockquote></p>
+
+<p><blockquote><p>delegate的概念出现与mvc，protocol，单线继承 密切相关。object-c 里没有多继承。那么又要避免做出一个对象什么都会（super class monster，huge ,super,waste）。一个超能对象，本身是否定了面向对象的概念和真谛了。</p></blockquote></p>
+
+<p><blockquote><p>The main value of delegation is that it allows you to easily customize the behavior of several objects in one central object</p></p><p><p>Helper Objects (Delegate and DataSource)<br/>Helper Objects are used throughout Cocoa and CocoaTouch, and usually take the form of a delegate or dataSource. They are commonly used to add functionality to an existing class without having to subclass it.</p></blockquote></p>
+
+<p><blockquote><p>Cocoa中处理事件的方式有几种，其中一种是你可以重载类中的对应的事件处理方 法，比如MouseDown事件在NSResponse类中就被方法mouseDown:处理，所以所有继承自NSResponse的类都可以重载 mouseDown:方法来实现对MouseDown事件的处理。</p></p><p><p>   另外一种处理方式就是使用Delegate，当一个对象接受到某个事件或者通知的时候， 会向它的Delegate对象查询它是否能够响应这个事件或者通知，如果可以这个对象就会给它的Delegate对象发送一个消息（执行一个方法调用）</p></blockquote></p>
+
+<p><blockquote><p>代理，他一定分担其它object的一部分工作!</p></p><p><p>   理由，有些动作是多个动作的复合体，例如 滑动条的，滑动过程，要处理滑动的速度，太快不行，他反应不了，还有滑动条滑动的连贯性，你不能一跳一跳的走吧，那难看死了，那就涉及到动画处理，最后滑动条滑到头了，触发什么事件，就这么一个事最起码要3个方法去完善它，在这里代理就用上了，他把一个大任务分送到3个子方法去做，那么这3个子方法就充当代理的角色，也就是xxxdelegate，这样的好处使代码的重用程度更高，而且，还易与维护，一个子方法发生变动不影响 整个大功能，否则写到一起，你改动一处，牵一发而动全身，在软件工程里很忌讳的，因为它是新衍生的语言么，设计者肯定在，这样以往的语言架构上都有的通病（模块的耦合度高和重用不是很好）上作调整。</p></p><p><p>  其次，有过c++/c开发经验的人 马上会想到callback我感觉他们是有点像，但是callback多数都是系统掉回去用了，例如，在c++中ontimer这个时钟，它每多少秒干什么事，就需要一个action 函数实现它，那么这个函数就是系统来调用，不是给我们用户创建的object调用的，而delegate分发出去谁用了说不准，我感觉设计者在设计这个delegate的时候，强调的是分发，而不是强调的是谁来用。</p></blockquote></p>
+
+<p><blockquote><p>打个比方，本来每个人的桌子都要自己清理，可能桌子意乱，自己就要清理一下。但是有一天来了一个阿姨(delegate)，大家把清理桌子的活都委托给他了。阿姨是个实现了清理技能的delegate。原因很多种，自己太懒、太忙、或者残了。。。</p></p><p><p>   注意的是，delegate一般会保留一个委托者的引用。因为阿姨不能按一个套路清理所有人的桌子，经常还得找委托者问，这个东西能不能扔。这个很重要!</p></blockquote></p>
+
+<p><blockquote><p>举个例子,我和gagaga都买股票,都想找个证卷商帮忙.<br/>我可以找我自己的,他也可以找他的,写程序的人发现我们的需求差不多,就给我们介绍了同一个奸商,lv同学.<br/>我们两给他的任务都很简单,就是当股票低于10元的时候就全部抛掉,那么lv就是我们的delegate,他就会帮我们<br/>盯着价格,我们就不用操心了.</p></blockquote></p>
+]]></content>
+  </entry>
+  
+</feed>
